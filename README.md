@@ -10,7 +10,7 @@ Tools for visualizing pulsar giant pulse profiles from PSRCHIVE archive files.
 
 Stacks normalized pulse profiles in the iconic Joy Division *Unknown Pleasures* style — white lines on a (optionally) dark background, with optional horizontal color gradients.
 
-![Joy Division style example](J1823_joydivision_C1_title_0.25_whiteup.pdf)
+![Joy Division style example](docs/example_joydivision.png)
 
 #### Usage
 
@@ -92,13 +92,23 @@ Creates a 3D perspective waterfall of pulse profiles stacked in time, rendered a
 
 ## Catalog Format
 
-Both scripts expect a whitespace-delimited catalog file with at least the following columns:
+Both scripts expect a whitespace-delimited catalog file (comments lines beginning with `#` are ignored). A typical row looks like:
 
 ```
-filename    toa_xprof    snr_xprof    width_ms    time_s
+# filename                          toa_xprof       snr_xprof  width_ms  time_s
+/data/pulses/gp_0001.zapp           53001.000123456  45.3       2.14      0.0
+/data/pulses/gp_0002.zapp           53001.000234567  31.7       1.87      1.2
 ```
 
-Lines beginning with `#` are treated as comments.
+| Column | Used by | Description |
+|--------|---------|-------------|
+| `filename` | both | Absolute or relative path to the `.zapp` PSRCHIVE archive for this pulse |
+| `toa_xprof` | Joy Division | Time of arrival from cross-profile fit (MJD) — used as the time axis label |
+| `snr_xprof` | both | Signal-to-noise ratio from cross-profile fit — used for `--snr-threshold` filtering |
+| `width_ms` | Joy Division | Pulse width in milliseconds — used for `--width-min` / `--width-max` filtering |
+| `time_s` | 3D waterfall | Pulse arrival time in seconds (e.g. relative to observation start) — used as the 3D y-axis |
+
+> **Note:** Additional columns in the catalog are ignored, so it is safe to include extra metadata columns.
 
 ---
 
