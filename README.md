@@ -10,7 +10,7 @@ Tools for visualizing pulsar giant pulse profiles from PSRCHIVE archive files.
 
 Stacks normalized pulse profiles in the iconic Joy Division *Unknown Pleasures* style — white lines on a (optionally) dark background, with optional horizontal color gradients.
 
-![Joy Division style example](docs/example_joydivision.png)
+![Joy Division style example](J1823_joydivision_C1_title_0.25_whiteup.png)
 
 #### Usage
 
