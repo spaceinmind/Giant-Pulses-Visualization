@@ -56,7 +56,7 @@ Stacks normalized pulse profiles in the iconic Joy Division *Unknown Pleasures* 
 
 Creates a 3D perspective waterfall of pulse profiles stacked in time, rendered as white polygons with black outlines.
 
-![3D waterfall example](giant_pulses_3d_ts32.png)
+<img src="giant_pulses_3d_ts32.png" width="600">
 
 #### Usage
 
