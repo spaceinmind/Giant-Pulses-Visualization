@@ -1,0 +1,4 @@
+numpy
+matplotlib
+pandas
+# psrchive must be installed separately — see http://psrchive.sourceforge.net/
